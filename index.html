@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/tiledwebmap.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/accessibility.js"></script>
+
+    
+    <style>
+        container {
+        height: 500px;
+        min-width: 310px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    </style>
+
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script>
+        // Create the chart
+
+        Highcharts.mapChart('container', {
+
+        chart: {
+
+            margin: 0
+
+        },
+        
+        title: {
+
+            text: ''
+
+        },
+        
+        subtitle: {
+
+            text: ''
+
+        },
+        
+        navigation: {
+
+            buttonOptions: {
+
+            align: 'left',
+
+            theme: {
+
+                stroke: '#e6e6e6'
+
+            }
+
+            }
+
+        },
+        
+        mapNavigation: {
+
+            enabled: true,
+
+            buttonOptions: {
+
+            alignTo: 'spacingBox'
+
+            }
+
+        },
+        
+        mapView: {
+
+            center: [106.72054698488046, 10.727226508017804],
+
+            zoom: 17
+
+        },
+        
+        tooltip: {
+
+            pointFormat: '{point.name}'
+
+        },
+        
+        legend: {
+
+            enabled: true,
+
+            title: {
+
+            text: 'Attractions in Fulbright University Vietnam'
+
+            },
+
+            align: 'left',
+
+            symbolWidth: 20,
+
+            symbolHeight: 20,
+
+            itemStyle: {
+
+            textOutline: '1 1 1px rgba(255,255,255)'
+
+            },
+
+            backgroundColor: 'rgba(255,255,255,0.8)',
+
+            float: true,
+
+            borderColor: '#e6e6e6',
+
+            borderWidth: 1,
+
+            borderRadius: 2,
+
+            itemMarginBottom: 5
+
+        },
+        
+        plotOptions: {
+
+            mappoint: {
+
+            dataLabels: {
+
+                enabled: false
+
+            }
+
+            }
+
+        },
+        
+        series: [{
+
+            type: 'tiledwebmap',
+
+            name: 'Basemap Tiles',
+
+            provider: {
+
+            type: 'OpenStreetMap'
+
+            },
+
+            showInLegend: false
+
+        }, {
+
+            type: 'mappoint',
+
+            name: 'Parks',
+
+            marker: {
+
+            symbol: 'url(https://www.highcharts.com/samples/graphics/tree.svg)',
+
+            width: 24,
+
+            height: 24
+
+            },
+
+            data: [{
+
+                name: 'The Park 1',
+
+                lon: 106.72160136416507,
+
+                lat: 10.72789807061385
+
+            },
+
+            {
+
+                name: 'The Park 2',
+
+                lon: 106.72273442591175,
+
+                lat: 10.725938905579145
+
+            },
+
+            {
+
+                name: 'The Park 3',
+
+                lon: 106.721787838419,
+
+                lat: 10.725432907097641,
+
+            },
+        
+            ]
+
+        }, {
+
+            type: 'mappoint',
+
+            name: 'Great buildings',
+
+            marker: {
+
+            symbol: 'url(https://www.highcharts.com/samples/graphics/building.svg)',
+
+            width: 24,
+
+            height: 24
+
+            },
+
+            data: [{
+
+                name: 'Tòa Nhà Southern Cross',
+
+                lon: 106.7205041464151,
+
+                lat: 10.728104686276684,
+
+            },
+
+            {
+
+                name: 'Crescent Plaza',
+
+                lon: 106.7204938182205,
+
+                lat: 10.727246255186099,
+
+            }
+
+            ]
+
+        }, {
+
+            type: 'mappoint',
+
+            name: 'Restaurants',
+
+            marker: {
+
+            symbol: 'url(https://www.highcharts.com/samples/graphics/eat.svg)',
+
+            width: 24,
+
+            height: 24
+
+            },
+
+            data: [{
+
+            name: 'Katinat Saigon Kafe',
+
+            lon: 106.72086695728248,
+
+            lat: 10.726609338099127,
+
+            }, {
+
+            name: 'Boomerang Bistro Saigon',
+
+            lon: 106.72040741085264,
+
+            lat: 10.726310547637253,
+
+            }, {
+
+            name: 'Circle K 107 Tôn Dật Tiên',
+
+            lon: 106.72101308497065,
+
+            lat: 10.726374710094284,
+
+            }, {
+
+            name: '7-Eleven',
+
+            lon: 106.719889695029,
+
+            lat: 10.727682616321857,
+
+            }]
+
+        }]
+
+        });
+
+        
+    </script>
+</body>
+</html>
